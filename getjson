@@ -1,0 +1,10 @@
+import urllib3
+import json
+import pprint
+http = urllib3.PoolManager()
+r = http.request('GET', 'http://movie-quote-api.herokuapp.com/v1/quote')
+r.status
+print(r.status)
+person_dict = json.loads(r.data.decode('utf-8'))
+print( person_dict)
+pprint.pprint(person_dict)
